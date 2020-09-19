@@ -1,0 +1,115 @@
+body{
+  background-color: #e6e6e6;
+}
+
+.header{
+  margin: 30 0 0 0;
+  font-size: 28;
+}
+
+.box , .loginBox{
+  margin: 30 0 30 0;
+  background-color: #fafafa;
+  color:black;
+  font-size: 26;
+  /* font-weight: 500; */
+  padding: 40 0 40 30;
+  border-radius: 32px;
+  -webkit-box-shadow:0 0 2px 1px #bdbdbd;
+}
+
+.loginBox{
+  display: none;
+}
+
+.box a , .loginBox a{
+  font-size: 20;
+}
+
+.btn-bar{
+  margin: 30 0 0 0;
+  border-radius: 32px;
+  -webkit-box-shadow:0 0 2px 1px #bdbdbd;
+}
+
+.btn-bar a{
+  background-color: #fafafa;
+  float: left;
+  color:black;
+  padding: 12;
+  font-size: 18;
+  font-family: 'Open Sans';
+  width: 150;
+  text-align: center;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+.btn-bar a:first-child{
+  border-top-left-radius:  32px;
+  border-bottom-left-radius: 32px;
+}
+
+.btn-bar a:last-child{
+  border-top-right-radius:  32px;
+  border-bottom-right-radius: 32px;
+}
+
+.btn-bar .myactive{
+  color:white;
+  background-color: #2f9cf1;
+}
+
+.inputbox{
+  margin: 12 0 0 0;
+  font-size: 18;
+  width: ;
+  font-weight: 400;
+}
+
+.inputbox span{
+  margin: 20 0 0 0;
+}
+
+.inputbox input[type=text],input[type=password],input[type=date],input[type=time],input[type=number]{
+  margin: 4 0 20 0;
+  padding: 10 0 10 15;
+  width: 300;
+  outline: none;
+  border-radius: 10px;
+  border-left: 2px solid #e0e0e0;
+  border-right: 2px solid #e0e0e0;
+  border-top: 2px solid #e0e0e0;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+input[type=text]:focus,input[type=password]:focus,input[type=date]:focus,input[type=time]:focus,input[type=number]:focus{
+  border:2px solid #2f9cf1;
+}
+
+.inputbox input[type=radio]{
+  text-align: center;
+  margin: 0 0 25 30;
+}
+
+input[type=submit],input[type=reset]{
+  height: 50;
+  width: 130;
+  background-color: #fff;
+  outline: none;
+  border:1.5px solid #2f9cf1;
+  border-radius: 64px;
+  font-size: 18;
+  color:#2f9cf1;
+}
+
+input[type=submit]:hover,input[type=reset]:hover{
+  background-color: #2f9cf1;
+  color:white;
+}
+
+.footer input{
+  margin: 15 10 0 10;
+}

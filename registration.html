@@ -1,0 +1,155 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sports Club Management | Welcome</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="registration.css">
+  <script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+
+<div class="container-fluid header text-center">
+  Sports Club Management
+</div>
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-0 btn-bar" onclick="navigation(event)">
+      <a href="#" class="myactive" id="registration">Registration</a>
+      <a href="#" class="" id="login">Login</a>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 box">
+      Registration
+
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="inputbox">
+            <form action="registration_db.php" method="post">
+              Username<br>
+              <input type="text" name="uname" autocomplete="off" required>
+
+              E-Mail<br>
+              <input type="text" name="email" autocomplete="off" required>
+
+              Gender<br>
+              <input type="radio" name="gender" value="Male"> Male
+              <input type="radio" name="gender" value="Female"> Female
+
+              Password<br>
+              <input type="password" name="password" minlength="8" autocomplete="off" required>
+
+              Re-enter Password<br>
+              <input type="password" name="repassword" minlength="8" autocomplete="off" required>
+
+              <input type="submit" value="Submit" name="submit">
+            </form>
+          </div>
+        </div>
+    </div>
+    <a href="#" onclick="navigation(event)" id="loginLink">Already registered? Login</a>
+
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 loginBox">
+      Login
+
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="inputBox">
+            <form action="registration_db.php" method="post">
+              Username<br>
+              <input type="text" name="name" autocomplete="off" required>
+
+              Password<br>
+              <input type="password" name="password" minlength="8" autocomplete="off" required>
+
+              <input type="submit" value="Login" name="login">
+            </form>
+          </div>
+        </div>
+      </div>
+      <a href="#" onclick="navigation(event)" id="regLink">Not a registered user? Register</a>
+
+    </div>
+  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> -->
+
+</body>
+</html>
+
+<?php
+  if(isset($_GET['db_auth']) && $_GET['db_auth'] == 1){
+    $message = "Password & Re-entered Passsword must be same";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+  }
+  if(isset($_GET['db_auth']) && $_GET['db_auth'] == 2){
+    $message = "Please enter valid e-mail address";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+  }
+  if(isset($_GET['db_auth']) && $_GET['db_auth'] == 3){
+    $message = "The E-mail address is alredy exists";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+  }
+  if(isset($_GET['db_auth']) && $_GET['db_auth'] == 4){
+    $message = "Username does not exists";
+    echo "<script type='text/javascript'>
+
+    var reg = document.getElementById('registration');
+    var login = document.getElementById('login');
+
+    var reg_box = document.getElementsByClassName('box')[0];
+    var login_box = document.getElementsByClassName('loginBox')[0];
+
+    reg.classList.remove('myactive');
+    login.classList.add('myactive');
+
+    reg_box.style.display='none';
+    login_box.style.display='block';
+
+    alert('$message');
+    </script>";
+  }
+  if(isset($_GET['db_auth']) && $_GET['db_auth'] == 5){
+    $message = "Password is invalid";
+    echo "<script type='text/javascript'>
+
+    var reg = document.getElementById('registration');
+    var login = document.getElementById('login');
+
+    var reg_box = document.getElementsByClassName('box')[0];
+    var login_box = document.getElementsByClassName('loginBox')[0];
+
+    reg.classList.remove('myactive');
+    login.classList.add('myactive');
+
+    reg_box.style.display='none';
+    login_box.style.display='block';
+
+    alert('$message');
+    </script>";
+  }
+?>
